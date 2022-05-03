@@ -12,7 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
     <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <script src="../js/swiper-bundle.min.js"></script>
   </head>
   <body>
     <!-- semantic -->
@@ -97,7 +101,54 @@
     </header>
     <!-- header end -->
     <div id="mainVisual">
-      <a href="">링크</a>
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide">
+          <div class="txtBox">
+            <div class="inner">
+              <p class="headTxt">국내 1위 이러닝 클라우드 플랫폼</p>
+              <h2>
+                맑은소프트 LMS로 <br />
+                최상의 교육 서비스를 <br />
+                제공하세요!
+              </h2>
+              <p class="descTxt">홈페이지, 콘텐츠 제작은 물론, 학습 관리와 교육 판매까지!</p>
+              <a href="">더보기</a>
+            </div>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="txtBox">
+            <div class="inner">
+              <p class="headTxt">국내 1위 이러닝 클라우드 플랫폼</p>
+              <h2>
+                맑은소프트 LMS로 <br />
+                최상의 교육 서비스를 <br />
+                제공하세요!
+              </h2>
+              <p class="descTxt">홈페이지, 콘텐츠 제작은 물론, 학습 관리와 교육 판매까지!</p>
+              <a href="">더보기</a>
+            </div>
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="txtBox">
+            <div class="inner">
+              <p class="headTxt">국내 1위 이러닝 클라우드 플랫폼</p>
+              <h2>
+                맑은소프트 LMS로 <br />
+                최상의 교육 서비스를 <br />
+                제공하세요!
+              </h2>
+              <p class="descTxt">홈페이지, 콘텐츠 제작은 물론, 학습 관리와 교육 판매까지!</p>
+              <a href="">더보기</a>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
+
+    <script>
+      new Swiper("#mainVisual");
+    </script>
   </body>
 </html>
