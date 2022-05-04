@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>맑은 소프트</title>
     <link rel="shortcut icon" href="../images/common/favicon.ico" type="image/x-icon" />
-
+    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/swiper.min.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/main.css" />
@@ -102,7 +102,7 @@
     <!-- header end -->
     <div id="mainVisual">
       <ul class="swiper-wrapper">
-        <li class="swiper-slide">
+        <li class="swiper-slide visual01">
           <div class="txtBox">
             <div class="inner">
               <p class="headTxt">국내 1위 이러닝 클라우드 플랫폼</p>
@@ -116,7 +116,7 @@
             </div>
           </div>
         </li>
-        <li class="swiper-slide">
+        <li class="swiper-slide visual02">
           <div class="txtBox">
             <div class="inner">
               <p class="headTxt">국내 1위 이러닝 클라우드 플랫폼</p>
@@ -130,7 +130,7 @@
             </div>
           </div>
         </li>
-        <li class="swiper-slide">
+        <li class="swiper-slide visual03">
           <div class="txtBox">
             <div class="inner">
               <p class="headTxt">국내 1위 이러닝 클라우드 플랫폼</p>
@@ -145,10 +145,23 @@
           </div>
         </li>
       </ul>
+      <button class="prev"><span class="material-icons"> chevron_left </span></button>
+      <button class="next"><span class="material-icons"> chevron_right </span></button>
     </div>
 
     <script>
-      new Swiper("#mainVisual");
+      new Swiper("#mainVisual", {
+        //effect: "slide",
+        speed: 1000,
+        loop: true,
+        navigation: {
+          nextEl: "#mainVisual .next",
+          prevEl: "#mainVisual .prev",
+        },
+        autoplay: {
+          delay: 5000,
+        },
+      });
     </script>
   </body>
 </html>
