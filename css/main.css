@@ -1,3 +1,13 @@
+.section { padding: 100px 0; }
+
+.section .titleBox { text-align: center; }
+
+.section .titleBox h2 { font-weight: 100; font-size: 48px; line-height: 1.5; }
+
+.section .titleBox h2 strong { font-weight: 700; display: block; }
+
+.section .titleBox h2 strong span { color: #0f91d0; }
+
 #mainVisual { margin-top: 100px; overflow: hidden; position: relative; }
 
 #mainVisual li { height: calc(100vh - 100px); position: relative; background-size: cover; background-repeat: none; background-position: 50% 50%; }
@@ -32,6 +42,16 @@
 
 #mainVisual .pagination { position: absolute; bottom: 50px; z-index: 2; text-align: center; }
 
-#mainVisual .pagination .swiper-pagination-bullet { width: 20px; height: 20px; border-radius: 100px; opacity: 1; background-color: transparent; border: 2px solid #fff; transition: all 0.25s ease-in-out; }
+#mainVisual .pagination .swiper-pagination-bullet { width: 100px; height: 4px; opacity: 1; border-radius: 0; background-color: rgba(255, 255, 255, 0.5); position: relative; }
 
-#mainVisual .pagination .swiper-pagination-bullet-active { background-color: #fff; width: 120px; }
+#mainVisual .pagination .swiper-pagination-bullet:after { display: block; position: absolute; content: ""; display: block; width: 0; height: 100%; background-color: #0f91d0; }
+
+#mainVisual .pagination .swiper-pagination-bullet-active:after { width: 100%; transition: width 3s linear; }
+
+#partner .swiper-container { overflow: hidden; }
+
+#partner .list li { width: auto; border: 1px solid #000; }
+
+#partner .list li .imgBox img { width: 250px; }
+
+#partner .list li .txtBox { border: 1px solid #666; border-radius: 0 0 20px 20px; padding: 20px; }
