@@ -18,6 +18,22 @@ a {
   margin: 0 auto;
 }
 #header {
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  transition: height 0.5s ease-in-out;
+  &.on {
+    height: 400px;
+  }
+  &:after {
+    @include pseudo;
+    @include box(100%, 1px, #ccc);
+    top: 100px;
+  }
   .container {
     display: flex;
     .customer {
@@ -50,6 +66,7 @@ a {
       }
       .depth02 {
         text-align: center;
+        padding-top: 30px;
         a {
           &::after {
             content: "\e895";

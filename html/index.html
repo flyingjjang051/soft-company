@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
     <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/main.css" />
 
@@ -150,11 +150,12 @@
       </ul>
       <button class="prev"><span class="material-icons"> chevron_left </span></button>
       <button class="next"><span class="material-icons"> chevron_right </span></button>
+      <div class="pagination"></div>
     </div>
 
     <script>
       new Swiper("#mainVisual", {
-        //effect: "slide",
+        effect: "cube",
         speed: 1000,
         loop: true,
         navigation: {
@@ -164,6 +165,28 @@
         autoplay: {
           delay: 5000,
         },
+        pagination: {
+          el: "#mainVisual .pagination",
+          type: "bullets",
+        },
+      });
+      // sql
+      const gnb = document.querySelector("#gnb");
+      const customer = document.querySelector("#header .customer");
+      const header = document.querySelector("#header");
+      gnb.addEventListener("mouseenter", function () {
+        //alert("mouseenter를 듣고 있어요");
+        header.classList.add("on");
+      });
+      gnb.addEventListener("mouseleave", function () {
+        header.classList.remove("on");
+      });
+      customer.addEventListener("mouseenter", function () {
+        //alert("mouseenter를 듣고 있어요");
+        header.classList.add("on");
+      });
+      customer.addEventListener("mouseleave", function () {
+        header.classList.remove("on");
       });
     </script>
   </body>

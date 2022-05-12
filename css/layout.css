@@ -4,6 +4,12 @@ a { color: inherit; text-decoration: none; }
 
 .container { width: 1280px; margin: 0 auto; }
 
+#header { height: 100px; overflow: hidden; position: absolute; z-index: 99; width: 100%; top: 0; background-color: #fff; transition: height 0.5s ease-in-out; }
+
+#header.on { height: 400px; }
+
+#header:after { display: block; position: absolute; content: ""; display: block; width: 100%; height: 1px; background-color: #ccc; top: 100px; }
+
 #header .container { display: flex; }
 
 #header .container .customer { margin-left: auto; }
@@ -16,7 +22,7 @@ a { color: inherit; text-decoration: none; }
 
 #header .container .customer .depth01 a:before { content: "\f0e2"; font-family: "Material Icons"; font-size: 24px; vertical-align: middle; margin-right: 10px; }
 
-#header .container .customer .depth02 { text-align: center; }
+#header .container .customer .depth02 { text-align: center; padding-top: 30px; }
 
 #header .container .customer .depth02 a::after { content: "\e895"; font-family: "Material Icons"; margin-left: 5px; }
 
