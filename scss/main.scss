@@ -21,6 +21,37 @@
   }
 }
 
+.btns {
+  display: flex;
+  justify-content: center;
+  .btn {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    overflow: hidden;
+    padding: 0 40px;
+    border-radius: 100px;
+    background-color: $main-color;
+    @include longShadow(darken($main-color, 10), 40);
+    &.line {
+      background: none;
+      text-shadow: none;
+      border: 2px solid $main-color;
+      color: $main-color;
+    }
+    &.wide {
+      padding: 0 60px;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  &.center {
+    justify-content: center;
+  }
+}
+
 #mainVisual {
   margin-top: 100px;
   overflow: hidden;
@@ -135,11 +166,12 @@
   }
 }
 
-#partner {
+#portfolio {
+  position: relative;
   .swiper-container {
     overflow: hidden;
   }
-  .list {
+  ul {
     li {
       width: 300px;
       //border: 1px solid #000;
@@ -214,6 +246,63 @@
           font-size: 20px;
           margin-top: 20px;
         }
+      }
+    }
+  }
+  .pagination {
+    top: auto;
+    bottom: 200px;
+    width: 800px;
+    left: 50%;
+    height: 10px;
+    border-radius: 100px;
+    overflow: hidden;
+    transform: translateX(-50%);
+    //background-color: rgba(0, 0, 0, 1);
+    .swiper-pagination-progressbar-fill {
+      //background-color: #f00;
+      border-radius: 100px;
+    }
+  }
+  .btns {
+    margin-top: 100px;
+    color: #fff;
+    .btn {
+      &:after {
+        content: "add";
+        font-family: "Material Icons";
+        display: inline-block;
+        margin-left: 80px;
+      }
+    }
+  }
+}
+
+#partner {
+  background-color: $bg-color;
+  .titleBox {
+    strong {
+      display: inline-block;
+    }
+  }
+  .list {
+    li {
+      background-color: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      margin: 0 10px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease-in-out;
+      &:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+      }
+      .txt {
+        padding: 20px;
+        text-align: center;
+        font-size: $font-medium * 0.75;
+        line-height: 1.25;
+        border-top: 1px solid #eee;
       }
     }
   }
