@@ -5,10 +5,11 @@
   padding: 100px 0;
   .titleBox {
     text-align: center;
+    margin-bottom: 50px;
     h2 {
       font-weight: 100;
       font-size: $font-large;
-      line-height: 1.5;
+      line-height: 1.25;
       strong {
         font-weight: 700;
         display: block;
@@ -140,17 +141,79 @@
   }
   .list {
     li {
-      width: auto;
-      border: 1px solid #000;
+      width: 300px;
+      //border: 1px solid #000;
+      border-radius: 15px;
+      overflow: hidden;
+      &:hover {
+        .imgBox {
+          .sticker {
+            background-color: #fff;
+            color: $main-color;
+          }
+          .cover {
+            top: 0;
+          }
+        }
+      }
       .imgBox {
+        position: relative;
+        overflow: hidden;
         img {
-          width: 250px;
+          width: 100%;
+          vertical-align: top;
+        }
+        .cover {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background-color: rgba($main-color, 0.8);
+          color: #fff;
+          padding-left: 20px;
+          padding-top: 60px;
+          box-sizing: border-box;
+          line-height: 1.5;
+          top: 100%;
+          transition: all 0.25s ease-in-out;
+          .link {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            &:after {
+              content: "\f1df";
+              font-family: "Material Icons";
+              display: inline-block;
+              margin-left: 5px;
+              transform: translateY(2px);
+            }
+          }
+        }
+        .sticker {
+          position: absolute;
+          left: 10px;
+          top: 10px;
+          padding: 10px 20px;
+          display: block;
+          background-color: $main-color;
+          color: #fff;
+          border-radius: 100px;
+          font-size: 14px;
+          z-index: 2;
+          transition: all 0.25s ease-in-out;
         }
       }
       .txtBox {
-        border: 1px solid #666;
-        border-radius: 0 0 20px 20px;
+        border: 1px solid #ccc;
+        border-top: none;
         padding: 20px;
+        text-align: center;
+        border-radius: 0 0 15px 15px;
+        h3 {
+          font-size: 20px;
+          margin-top: 20px;
+        }
       }
     }
   }
