@@ -452,3 +452,98 @@
     }
   }
 }
+
+#solution {
+  background-color: $bg-color;
+  .lmsWrap {
+    display: flex;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    .title {
+      height: 300px;
+      background-color: darken($bg-color, 10);
+      //outline: 1px solid #000;
+    }
+    li {
+      a {
+        height: 300px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        &:before {
+          content: "";
+          display: block;
+          width: 100px;
+          height: 100px;
+          border: 1px solid #999;
+          border-radius: 100%;
+          margin-bottom: 30px;
+        }
+        h4 {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+        span {
+          color: $main-color;
+          //text-decoration: underline;
+          border-bottom: 2px solid $main-color; // 애니메이션을 할거면 border를 사용하지 않는다.
+          //padding-bottom: 20px;
+        }
+        //outline: 1px solid #000;
+      }
+    }
+    &:nth-child(1) {
+      .lmsBox {
+        width: 100%;
+      }
+      .title {
+        width: 20%;
+      }
+      ul {
+        display: flex;
+        width: 80%;
+        li {
+          width: 25%;
+        }
+      }
+    }
+    &:nth-child(2) {
+      .lmsBox:nth-child(1) {
+        width: 60%;
+        .title {
+          width: 33.33%;
+        }
+        ul {
+          width: 66.66%;
+          li {
+            width: 50%;
+          }
+        }
+      }
+      .lmsBox:nth-child(2) {
+        width: 40%;
+        .title {
+          width: 50%;
+        }
+        ul {
+          width: 50%;
+          li {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .lmsBox {
+      display: flex;
+      ul {
+        display: flex;
+      }
+    }
+  }
+}
