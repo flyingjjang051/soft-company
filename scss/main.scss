@@ -12,7 +12,6 @@
       line-height: 1.25;
       strong {
         font-weight: 700;
-        display: block;
         span {
           color: $main-color;
         }
@@ -24,6 +23,9 @@
 .btns {
   display: flex;
   justify-content: center;
+  &.left {
+    justify-content: flex-start;
+  }
   .btn {
     display: flex;
     align-items: center;
@@ -31,6 +33,7 @@
     overflow: hidden;
     padding: 0 40px;
     border-radius: 100px;
+    margin: 0 5px;
     background-color: $main-color;
     @include longShadow(darken($main-color, 10), 40);
     &.line {
@@ -38,6 +41,13 @@
       text-shadow: none;
       border: 2px solid $main-color;
       color: $main-color;
+    }
+    &.arrow {
+      &:after {
+        content: "east";
+        font-family: "Material Icons";
+        margin-left: 30px;
+      }
     }
     &.wide {
       padding: 0 60px;
@@ -280,11 +290,6 @@
 
 #partner {
   background-color: $bg-color;
-  .titleBox {
-    strong {
-      display: inline-block;
-    }
-  }
   .list {
     li {
       background-color: #fff;
@@ -303,6 +308,81 @@
         font-size: $font-medium * 0.75;
         line-height: 1.25;
         border-top: 1px solid #eee;
+      }
+    }
+  }
+}
+
+#elearning {
+  .pagination {
+    justify-content: center;
+    .swiper-pagination-bullet {
+      width: 200px;
+      height: 200px;
+      background: none;
+      text-align: center;
+      opacity: 1;
+      &:before {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #999;
+        border-radius: 100%;
+        margin: 0 auto 20px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      &:nth-child(1):before {
+        background-image: url("../images/main/service_icon01.png");
+      }
+      &:nth-child(2):before {
+        background-image: url("../images/main/service_icon02.png");
+      }
+      &:nth-child(3):before {
+        background-image: url("../images/main/service_icon03.png");
+      }
+      &:nth-child(4):before {
+        background-image: url("../images/main/service_icon04.png");
+      }
+      &:nth-child(5):before {
+        background-image: url("../images/main/service_icon05.png");
+      }
+      &:nth-child(6):before {
+        background-image: url("../images/main/service_icon06.png");
+      }
+    }
+  }
+  .rolling {
+    overflow: hidden;
+
+    .list {
+      > li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .desc {
+          flex-basis: 50%;
+          h3 {
+            font-size: $font-medium;
+            margin-bottom: 20px;
+          }
+          p {
+            line-height: 1.75;
+            font-size: 18px;
+            word-break: keep-all; // 단어 줄바꿈 방지...
+          }
+          .hashTag {
+            margin-top: 20px;
+            display: flex;
+            font-size: 18px;
+            color: $main-color;
+            margin-bottom: 30px;
+            li {
+              margin-right: 15px;
+            }
+          }
+        }
       }
     }
   }
