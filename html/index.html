@@ -490,6 +490,8 @@
               </div>
             </li>
           </ul>
+          <button class="prev"><span class="material-icons"> chevron_left </span></button>
+          <button class="next"><span class="material-icons"> chevron_right </span></button>
         </div>
       </div>
       
@@ -546,7 +548,11 @@
             // 문자열 string "",'',``
             return `<span class="${className}">${paginationItems[index]}</span>`;  
           }
-        }
+        },
+        navigation: {
+          nextEl: "#elearning .next",
+          prevEl: "#elearning .prev",
+        },
       });
       
       

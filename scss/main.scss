@@ -322,6 +322,7 @@
       background: none;
       text-align: center;
       opacity: 1;
+
       &:before {
         content: "";
         display: block;
@@ -332,6 +333,8 @@
         margin: 0 auto 20px;
         background-position: 50% 50%;
         background-repeat: no-repeat;
+        background-color: #fff;
+        transition: all 0.5s ease-in-out;
       }
       &:nth-child(1):before {
         background-image: url("../images/main/service_icon01.png");
@@ -351,16 +354,54 @@
       &:nth-child(6):before {
         background-image: url("../images/main/service_icon06.png");
       }
+      &-active:before {
+        background-color: $main-color;
+        border-color: $main-color;
+      }
+      &:nth-child(1) {
+        &.swiper-pagination-bullet-active:before {
+          background-image: url("../images/main/service_icon01_up.png");
+        }
+      }
+      &:nth-child(2) {
+        &.swiper-pagination-bullet-active:before {
+          background-image: url("../images/main/service_icon02_up.png");
+        }
+      }
+      &:nth-child(3) {
+        &.swiper-pagination-bullet-active:before {
+          background-image: url("../images/main/service_icon03_up.png");
+        }
+      }
+      &:nth-child(4) {
+        &.swiper-pagination-bullet-active:before {
+          background-image: url("../images/main/service_icon04_up.png");
+        }
+      }
+      &:nth-child(5) {
+        &.swiper-pagination-bullet-active:before {
+          background-image: url("../images/main/service_icon05_up.png");
+        }
+      }
+      &:nth-child(6) {
+        &.swiper-pagination-bullet-active:before {
+          background-image: url("../images/main/service_icon06_up.png");
+        }
+      }
     }
   }
   .rolling {
     overflow: hidden;
+    position: relative;
+    margin-top: 100px;
 
     .list {
       > li {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0 50px;
+        box-sizing: border-box;
         .desc {
           flex-basis: 50%;
           h3 {
@@ -383,6 +424,30 @@
             }
           }
         }
+      }
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-100%);
+      background: none;
+      width: 70px;
+      height: 70px;
+      border-radius: 100%;
+      z-index: 2;
+      background-color: #fff;
+      border: none;
+      .material-icons {
+        font-size: 36px;
+      }
+
+      &.prev {
+        left: 15px;
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+      }
+      &.next {
+        right: 15px;
+        box-shadow: 10px 0 10px rgba(0, 0, 0, 0.2);
       }
     }
   }
