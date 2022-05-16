@@ -82,15 +82,21 @@
       bottom: 0;
       background-color: rgba(0, 0, 0, 0.5);
     }
-    &.visual01 {
-      background-image: url("../images/main/visual01.jpg");
+    //보간(interpolation) 주의
+    @for $i from 1 to 4 {
+      &.visual0#{$i} {
+        background-image: url("../images/main/visual0#{$i}.jpg");
+      }
     }
-    &.visual02 {
-      background-image: url("../images/main/visual02.jpg");
-    }
-    &.visual03 {
-      background-image: url("../images/main/visual03.jpg");
-    }
+    // &.visual01 {
+    //   background-image: url("../images/main/visual01.jpg");
+    // }
+    // &.visual02 {
+    //   background-image: url("../images/main/visual02.jpg");
+    // }
+    // &.visual03 {
+    //   background-image: url("../images/main/visual03.jpg");
+    // }
     .txtBox {
       width: 1280px;
       height: 100%;
@@ -336,58 +342,70 @@
         background-color: #fff;
         transition: all 0.5s ease-in-out;
       }
-      &:nth-child(1):before {
-        background-image: url("../images/main/service_icon01.png");
-      }
-      &:nth-child(2):before {
-        background-image: url("../images/main/service_icon02.png");
-      }
-      &:nth-child(3):before {
-        background-image: url("../images/main/service_icon03.png");
-      }
-      &:nth-child(4):before {
-        background-image: url("../images/main/service_icon04.png");
-      }
-      &:nth-child(5):before {
-        background-image: url("../images/main/service_icon05.png");
-      }
-      &:nth-child(6):before {
-        background-image: url("../images/main/service_icon06.png");
-      }
+      //보간  {}   // {{}}
       &-active:before {
         background-color: $main-color;
         border-color: $main-color;
       }
-      &:nth-child(1) {
-        &.swiper-pagination-bullet-active:before {
-          background-image: url("../images/main/service_icon01_up.png");
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}):before {
+          background-image: url("../images/main/service_icon0#{$i}.png");
+        }
+        &:nth-child(#{$i}) {
+          &.swiper-pagination-bullet-active:before {
+            background-image: url("../images/main/service_icon0#{$i}_up.png");
+          }
         }
       }
-      &:nth-child(2) {
-        &.swiper-pagination-bullet-active:before {
-          background-image: url("../images/main/service_icon02_up.png");
-        }
-      }
-      &:nth-child(3) {
-        &.swiper-pagination-bullet-active:before {
-          background-image: url("../images/main/service_icon03_up.png");
-        }
-      }
-      &:nth-child(4) {
-        &.swiper-pagination-bullet-active:before {
-          background-image: url("../images/main/service_icon04_up.png");
-        }
-      }
-      &:nth-child(5) {
-        &.swiper-pagination-bullet-active:before {
-          background-image: url("../images/main/service_icon05_up.png");
-        }
-      }
-      &:nth-child(6) {
-        &.swiper-pagination-bullet-active:before {
-          background-image: url("../images/main/service_icon06_up.png");
-        }
-      }
+      // &:nth-child(1):before {
+      //   background-image: url("../images/main/service_icon01.png");
+      // }
+      // &:nth-child(2):before {
+      //   background-image: url("../images/main/service_icon02.png");
+      // }
+      // &:nth-child(3):before {
+      //   background-image: url("../images/main/service_icon03.png");
+      // }
+      // &:nth-child(4):before {
+      //   background-image: url("../images/main/service_icon04.png");
+      // }
+      // &:nth-child(5):before {
+      //   background-image: url("../images/main/service_icon05.png");
+      // }
+      // &:nth-child(6):before {
+      //   background-image: url("../images/main/service_icon06.png");
+      // }
+
+      // &:nth-child(1) {
+      //   &.swiper-pagination-bullet-active:before {
+      //     background-image: url("../images/main/service_icon01_up.png");
+      //   }
+      // }
+      // &:nth-child(2) {
+      //   &.swiper-pagination-bullet-active:before {
+      //     background-image: url("../images/main/service_icon02_up.png");
+      //   }
+      // }
+      // &:nth-child(3) {
+      //   &.swiper-pagination-bullet-active:before {
+      //     background-image: url("../images/main/service_icon03_up.png");
+      //   }
+      // }
+      // &:nth-child(4) {
+      //   &.swiper-pagination-bullet-active:before {
+      //     background-image: url("../images/main/service_icon04_up.png");
+      //   }
+      // }
+      // &:nth-child(5) {
+      //   &.swiper-pagination-bullet-active:before {
+      //     background-image: url("../images/main/service_icon05_up.png");
+      //   }
+      // }
+      // &:nth-child(6) {
+      //   &.swiper-pagination-bullet-active:before {
+      //     background-image: url("../images/main/service_icon06_up.png");
+      //   }
+      // }
     }
   }
   .rolling {
@@ -463,8 +481,42 @@
     margin-bottom: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     .title {
-      height: 300px;
-      background-color: darken($bg-color, 10);
+      a {
+        display: block;
+        height: 300px;
+        background-color: darken($bg-color, 10);
+        position: relative;
+        h3 {
+          position: absolute;
+          left: 50px;
+          top: 50px;
+          font-size: 24px;
+          line-height: 1.5;
+          .eng {
+            display: block;
+          }
+        }
+        .arrow {
+          position: absolute;
+          left: 50px;
+          top: 150px;
+          width: 40px;
+          height: 40px;
+          border-radius: 100%;
+          //background-color: $main-color;
+          background: rgb(62, 172, 219);
+          background: linear-gradient(45deg, rgba(62, 172, 219, 1) 0%, rgba(126, 223, 185, 1) 100%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:before {
+            content: "east";
+            font-family: "Material Icons";
+            color: #fff;
+          }
+        }
+      }
+
       //outline: 1px solid #000;
     }
     li {
@@ -476,6 +528,9 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        &:hover:before {
+          border-color: $main-color;
+        }
         &:before {
           content: "";
           display: block;
@@ -484,6 +539,15 @@
           border: 1px solid #999;
           border-radius: 100%;
           margin-bottom: 30px;
+          // background-color: #fff;
+          // background-repeat: no-repeat;
+          // background-position: 50% 50%;
+          background: {
+            color: #fff;
+            repeat: no-repeat;
+            position: 50% 50%;
+          }
+          transition: all 0.25s ease-in-out;
         }
         h4 {
           font-size: 18px;
@@ -510,6 +574,41 @@
         width: 80%;
         li {
           width: 25%;
+
+          @for $i from 1 through 4 {
+            &:nth-child(#{$i}) a:before {
+              background-image: url("../images/main/solution_img0#{$i}.png");
+            }
+            &:nth-child(#{$i}) a:hover:before {
+              background-image: url("../images/main/solution_img0#{$i}_up.png");
+            }
+          }
+
+          // &:nth-child(1) a:before {
+          //   background-image: url("../images/main/solution_img01.png");
+          // }
+          // &:nth-child(2) a:before {
+          //   background-image: url("../images/main/solution_img02.png");
+          // }
+          // &:nth-child(3) a:before {
+          //   background-image: url("../images/main/solution_img03.png");
+          // }
+          // &:nth-child(4) a:before {
+          //   background-image: url("../images/main/solution_img04.png");
+          // }
+
+          // &:nth-child(1) a:hover:before {
+          //   background-image: url("../images/main/solution_img01_up.png");
+          // }
+          // &:nth-child(2) a:hover:before {
+          //   background-image: url("../images/main/solution_img02_up.png");
+          // }
+          // &:nth-child(3) a:hover:before {
+          //   background-image: url("../images/main/solution_img03_up.png");
+          // }
+          // &:nth-child(4) a:hover:before {
+          //   background-image: url("../images/main/solution_img04_up.png");
+          // }
         }
       }
     }
@@ -523,6 +622,27 @@
           width: 66.66%;
           li {
             width: 50%;
+            @for $i from 1 to 3 {
+              &:nth-child(#{$i}) a:before {
+                background-image: url("../images/main/solution_img0#{$i+4}.png");
+              }
+              &:nth-child(#{$i}) a:hover:before {
+                background-image: url("../images/main/solution_img0#{$i+4}_up.png");
+              }
+            }
+            // &:nth-child(1) a:before {
+            //   background-image: url("../images/main/solution_img05.png");
+            // }
+            // &:nth-child(2) a:before {
+            //   background-image: url("../images/main/solution_img06.png");
+            // }
+
+            // &:nth-child(1) a:hover:before {
+            //   background-image: url("../images/main/solution_img05_up.png");
+            // }
+            // &:nth-child(2) a:hover:before {
+            //   background-image: url("../images/main/solution_img06_up.png");
+            // }
           }
         }
       }
@@ -535,6 +655,12 @@
           width: 50%;
           li {
             width: 100%;
+            &:nth-child(1) a:before {
+              background-image: url("../images/main/solution_img07.png");
+            }
+            &:nth-child(1) a:hover:before {
+              background-image: url("../images/main/solution_img07_up.png");
+            }
           }
         }
       }
