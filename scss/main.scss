@@ -75,6 +75,14 @@
         background: radial-gradient(#7ee495, transparent, transparent);
       }
     }
+    &.plus {
+      &:after {
+        content: "add";
+        font-family: "Material Icons";
+        display: inline-block;
+        margin-left: 80px;
+      }
+    }
   }
 }
 
@@ -305,15 +313,6 @@
   }
   .btns {
     margin-top: 100px;
-    color: #fff;
-    .btn {
-      &:after {
-        content: "add";
-        font-family: "Material Icons";
-        display: inline-block;
-        margin-left: 80px;
-      }
-    }
   }
 }
 
@@ -747,7 +746,7 @@
 
 #price {
   background-color: $bg-color;
-  .btns {
+  .tabMenu {
     width: 400px;
     margin: 0 auto;
     background-color: #fff;
@@ -756,6 +755,7 @@
       width: 50%;
       margin: 0;
       justify-content: center;
+      font-size: 16px;
       &.off {
         background-color: #fff;
         color: #111;
@@ -764,15 +764,21 @@
   }
   .list {
     justify-content: space-between;
-    margin-top: 50px;
+    margin: 50px 0;
     > li {
       flex-basis: 24%;
-      padding: 20px;
+      padding: 30px 20px;
       border: 1px solid #ccc;
       background-color: #fff;
       box-sizing: border-box;
       position: relative;
       overflow: hidden;
+      box-shadow: inset 0 0 0 0 $main-color;
+      transition: all 0.25s ease-in-out;
+      &:hover {
+        box-shadow: inset 0 0 0 10px $main-color, 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+        transform: translateY(-20px);
+      }
       .title {
         margin-bottom: 20px;
         h3 {
@@ -810,6 +816,7 @@
         width: auto;
         .btn {
           flex-grow: 1;
+          justify-content: center;
         }
       }
       .sticker {
@@ -842,6 +849,49 @@
           top: -50px;
         }
         //transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+#news {
+  .list {
+    justify-content: space-between;
+    li {
+      flex-basis: 24%;
+      &:hover {
+        a .imgBox img {
+          transform: scale(1.2);
+        }
+      }
+      a {
+        .imgBox {
+          border-radius: 20px;
+          overflow: hidden;
+          position: relative;
+          .sticker {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background-color: $main-color;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 100px;
+          }
+          img {
+            width: 100%;
+            transition: all 0.25s ease-in-out;
+          }
+        }
+        .desc {
+          margin-top: 20px;
+          font-size: 18px;
+          .date {
+            color: #ccc;
+            margin-bottom: 10px;
+            font-size: 15px;
+          }
+        }
       }
     }
   }
