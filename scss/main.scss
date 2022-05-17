@@ -762,4 +762,87 @@
       }
     }
   }
+  .list {
+    justify-content: space-between;
+    margin-top: 50px;
+    > li {
+      flex-basis: 24%;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      .title {
+        margin-bottom: 20px;
+        h3 {
+          font-size: $font-medium;
+          strong {
+            font-weight: 700;
+          }
+          small {
+            font-size: $font-normal;
+          }
+        }
+      }
+      .items {
+        height: 180px;
+        padding: 20px;
+        background-color: #eee;
+        border-radius: 10px;
+        li {
+          margin: 8px 0;
+          font-size: 15px;
+          dl {
+            display: flex;
+            dt {
+              flex-basis: 55%;
+            }
+            dd {
+              flex-grow: 1;
+              //background-color: rgb(180, 180, 238);
+            }
+          }
+        }
+      }
+      .btns {
+        margin-top: 20px;
+        width: auto;
+        .btn {
+          flex-grow: 1;
+        }
+      }
+      .sticker {
+        position: absolute;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        right: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        span {
+          position: absolute;
+          left: 0;
+          top: 16px;
+          transform: rotate(45deg);
+          &:before {
+            @include pseudo;
+            @include box(4px, 4px, #fff);
+            border-radius: 100%;
+            left: 50%;
+            top: -10px;
+          }
+        }
+        &:before {
+          @include pseudo;
+          border: 50px solid transparent;
+          border-bottom-color: $main-color;
+          transform: rotate(45deg);
+          top: -50px;
+        }
+        //transform: rotate(45deg);
+      }
+    }
+  }
 }

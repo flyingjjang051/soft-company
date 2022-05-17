@@ -271,3 +271,37 @@
 #price .btns .btn { width: 50%; margin: 0; justify-content: center; }
 
 #price .btns .btn.off { background-color: #fff; color: #111; }
+
+#price .list { justify-content: space-between; margin-top: 50px; }
+
+#price .list > li { flex-basis: 24%; padding: 20px; border: 1px solid #ccc; background-color: #fff; box-sizing: border-box; position: relative; overflow: hidden; }
+
+#price .list > li .title { margin-bottom: 20px; }
+
+#price .list > li .title h3 { font-size: 28px; }
+
+#price .list > li .title h3 strong { font-weight: 700; }
+
+#price .list > li .title h3 small { font-size: 16px; }
+
+#price .list > li .items { height: 180px; padding: 20px; background-color: #eee; border-radius: 10px; }
+
+#price .list > li .items li { margin: 8px 0; font-size: 15px; }
+
+#price .list > li .items li dl { display: flex; }
+
+#price .list > li .items li dl dt { flex-basis: 55%; }
+
+#price .list > li .items li dl dd { flex-grow: 1; }
+
+#price .list > li .btns { margin-top: 20px; width: auto; }
+
+#price .list > li .btns .btn { flex-grow: 1; }
+
+#price .list > li .sticker { position: absolute; color: #fff; font-size: 18px; font-weight: 700; right: 0; top: 0; width: 50px; height: 50px; }
+
+#price .list > li .sticker span { position: absolute; left: 0; top: 16px; transform: rotate(45deg); }
+
+#price .list > li .sticker span:before { display: block; position: absolute; content: ""; display: block; width: 4px; height: 4px; background-color: #fff; border-radius: 100%; left: 50%; top: -10px; }
+
+#price .list > li .sticker:before { display: block; position: absolute; content: ""; border: 50px solid transparent; border-bottom-color: #0f91d0; transform: rotate(45deg); top: -50px; }
