@@ -35,7 +35,9 @@
     border-radius: 100px;
     margin: 0 5px;
     background-color: $main-color;
-    @include longShadow(darken($main-color, 10), 40);
+    border: none;
+    color: #fff;
+    //@include longShadow(darken($main-color, 10), 40);
     &.line {
       background: none;
       text-shadow: none;
@@ -716,10 +718,48 @@
 
 #demo {
   .list {
-    padding: 0 100px;
+    padding: 50px 100px;
+    border-bottom: 1px solid #ccc;
     li {
       flex-basis: 33.33%;
       text-align: center;
+      .btn {
+        width: 170px;
+        letter-spacing: -0.05em;
+        position: relative;
+        &:after {
+          position: absolute;
+          right: 50px;
+        }
+      }
+    }
+  }
+  .experience {
+    align-items: center;
+    border-bottom: none;
+    padding-bottom: 0;
+    .title {
+      font-size: $font-medium;
+      margin-right: 30px;
+    }
+  }
+}
+
+#price {
+  background-color: $bg-color;
+  .btns {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 100px;
+    .btn {
+      width: 50%;
+      margin: 0;
+      justify-content: center;
+      &.off {
+        background-color: #fff;
+        color: #111;
+      }
     }
   }
 }
