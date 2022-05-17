@@ -29,7 +29,7 @@
   .btn {
     display: flex;
     align-items: center;
-    height: 60px;
+    height: 50px;
     overflow: hidden;
     padding: 0 40px;
     border-radius: 100px;
@@ -51,6 +51,27 @@
     }
     &.wide {
       padding: 0 60px;
+    }
+    &.gradient {
+      background-color: $main-color;
+      color: #fff;
+      text-shadow: none;
+      position: relative;
+      &:hover:before {
+        transform: translateY(-50%) scale(2);
+      }
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        right: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.25s ease-in-out;
+        background: radial-gradient(#7ee495, transparent, transparent);
+      }
     }
   }
 }
@@ -481,11 +502,30 @@
     margin-bottom: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     .title {
+      @for $i from 1 to 4 {
+        &.title0#{$i} a {
+          background-image: url("../images/main/solution_tit0#{$i}.png");
+        }
+      }
+      // &.title01 a {
+      //   background-image: url("../images/main/solution_tit01.png");
+      // }
+      // &.title02 a {
+      //   background-image: url("../images/main/solution_tit02.png");
+      // }
+      // &.title03 a {
+      //   background-image: url("../images/main/solution_tit03.png");
+      // }
+
       a {
         display: block;
         height: 300px;
-        background-color: darken($bg-color, 10);
         position: relative;
+        background: {
+          color: darken($bg-color, 10);
+          position: bottom 50px right 50px;
+          repeat: no-repeat;
+        }
         h3 {
           position: absolute;
           left: 50px;
@@ -670,6 +710,16 @@
       ul {
         display: flex;
       }
+    }
+  }
+}
+
+#demo {
+  .list {
+    padding: 0 100px;
+    li {
+      flex-basis: 33.33%;
+      text-align: center;
     }
   }
 }

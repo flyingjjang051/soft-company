@@ -12,13 +12,19 @@
 
 .btns.left { justify-content: flex-start; }
 
-.btns .btn { display: flex; align-items: center; height: 60px; overflow: hidden; padding: 0 40px; border-radius: 100px; margin: 0 5px; background-color: #0f91d0; text-shadow: 1px 1px 0px #0c70a0,2px 2px 0px #0c70a0,3px 3px 0px #0c70a0,4px 4px 0px #0c70a0,5px 5px 0px #0c70a0,6px 6px 0px #0c70a0,7px 7px 0px #0c70a0,8px 8px 0px #0c70a0,9px 9px 0px #0c70a0,10px 10px 0px #0c70a0,11px 11px 0px #0c70a0,12px 12px 0px #0c70a0,13px 13px 0px #0c70a0,14px 14px 0px #0c70a0,15px 15px 0px #0c70a0,16px 16px 0px #0c70a0,17px 17px 0px #0c70a0,18px 18px 0px #0c70a0,19px 19px 0px #0c70a0,20px 20px 0px #0c70a0,21px 21px 0px #0c70a0,22px 22px 0px #0c70a0,23px 23px 0px #0c70a0,24px 24px 0px #0c70a0,25px 25px 0px #0c70a0,26px 26px 0px #0c70a0,27px 27px 0px #0c70a0,28px 28px 0px #0c70a0,29px 29px 0px #0c70a0,30px 30px 0px #0c70a0,31px 31px 0px #0c70a0,32px 32px 0px #0c70a0,33px 33px 0px #0c70a0,34px 34px 0px #0c70a0,35px 35px 0px #0c70a0,36px 36px 0px #0c70a0,37px 37px 0px #0c70a0,38px 38px 0px #0c70a0,40px 40px 0px #0c70a0; }
+.btns .btn { display: flex; align-items: center; height: 50px; overflow: hidden; padding: 0 40px; border-radius: 100px; margin: 0 5px; background-color: #0f91d0; text-shadow: 1px 1px 0px #0c70a0,2px 2px 0px #0c70a0,3px 3px 0px #0c70a0,4px 4px 0px #0c70a0,5px 5px 0px #0c70a0,6px 6px 0px #0c70a0,7px 7px 0px #0c70a0,8px 8px 0px #0c70a0,9px 9px 0px #0c70a0,10px 10px 0px #0c70a0,11px 11px 0px #0c70a0,12px 12px 0px #0c70a0,13px 13px 0px #0c70a0,14px 14px 0px #0c70a0,15px 15px 0px #0c70a0,16px 16px 0px #0c70a0,17px 17px 0px #0c70a0,18px 18px 0px #0c70a0,19px 19px 0px #0c70a0,20px 20px 0px #0c70a0,21px 21px 0px #0c70a0,22px 22px 0px #0c70a0,23px 23px 0px #0c70a0,24px 24px 0px #0c70a0,25px 25px 0px #0c70a0,26px 26px 0px #0c70a0,27px 27px 0px #0c70a0,28px 28px 0px #0c70a0,29px 29px 0px #0c70a0,30px 30px 0px #0c70a0,31px 31px 0px #0c70a0,32px 32px 0px #0c70a0,33px 33px 0px #0c70a0,34px 34px 0px #0c70a0,35px 35px 0px #0c70a0,36px 36px 0px #0c70a0,37px 37px 0px #0c70a0,38px 38px 0px #0c70a0,40px 40px 0px #0c70a0; }
 
 .btns .btn.line { background: none; text-shadow: none; border: 2px solid #0f91d0; color: #0f91d0; }
 
 .btns .btn.arrow:after { content: "east"; font-family: "Material Icons"; margin-left: 30px; }
 
 .btns .btn.wide { padding: 0 60px; }
+
+.btns .btn.gradient { background-color: #0f91d0; color: #fff; text-shadow: none; position: relative; }
+
+.btns .btn.gradient:hover:before { transform: translateY(-50%) scale(2); }
+
+.btns .btn.gradient:before { content: ""; display: block; position: absolute; width: 150px; height: 150px; right: -80px; top: 50%; transform: translateY(-50%); transition: all 0.25s ease-in-out; background: radial-gradient(#7ee495, transparent, transparent); }
 
 .list { display: flex; }
 
@@ -164,7 +170,13 @@
 
 #solution .lmsWrap { display: flex; width: 100%; border-radius: 20px; overflow: hidden; margin-bottom: 10px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
 
-#solution .lmsWrap .title a { display: block; height: 300px; background-color: #cce2e8; position: relative; }
+#solution .lmsWrap .title.title01 a { background-image: url("../images/main/solution_tit01.png"); }
+
+#solution .lmsWrap .title.title02 a { background-image: url("../images/main/solution_tit02.png"); }
+
+#solution .lmsWrap .title.title03 a { background-image: url("../images/main/solution_tit03.png"); }
+
+#solution .lmsWrap .title a { display: block; height: 300px; position: relative; background-color: #cce2e8; background-position: bottom 50px right 50px; background-repeat: no-repeat; }
 
 #solution .lmsWrap .title a h3 { position: absolute; left: 50px; top: 50px; font-size: 24px; line-height: 1.5; }
 
@@ -239,3 +251,7 @@
 #solution .lmsWrap .lmsBox { display: flex; }
 
 #solution .lmsWrap .lmsBox ul { display: flex; }
+
+#demo .list { padding: 0 100px; }
+
+#demo .list li { flex-basis: 33.33%; text-align: center; }
