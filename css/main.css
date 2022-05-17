@@ -323,3 +323,18 @@
 #news .list li a .desc { margin-top: 20px; font-size: 18px; }
 
 #news .list li a .desc .date { color: #ccc; margin-bottom: 10px; font-size: 15px; }
+
+svg#freepik_stories-insert-block:not(.animated) .animable { opacity: 0; }
+
+svg#freepik_stories-insert-block.animated #freepik--Character--inject-221 { animation: 1s 1 forwards ease-in fadeIn, 3s Infinite linear heartbeat; animation-delay: 0s, 2s; }
+
+@keyframes fadeIn { 0% { opacity: 0; }
+  100% { opacity: 1; } }
+
+@keyframes heartbeat { 0% { transform: scale(1); }
+  10% { transform: scale(1.1); }
+  30% { transform: scale(1); }
+  40% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  60% { transform: scale(1); }
+  100% { transform: scale(1); } }

@@ -148,3 +148,99 @@ a {
     }
   }
 }
+
+#footer {
+  .utilMenu {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      ul {
+        display: flex;
+      }
+      .sns {
+        li {
+          margin-left: 10px;
+          &:nth-child(1) a {
+            background-image: url("../images/common/sns01.png");
+            &:hover {
+              background-color: rgb(69, 196, 1);
+            }
+          }
+          &:nth-child(2) a {
+            background-image: url("../images/common/sns02.png");
+            &:hover {
+              background-color: rgb(209, 49, 0);
+            }
+          }
+          a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            text-indent: -1000px;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: all 0.25s ease-in-out;
+            background: {
+              repeat: no-repeat;
+              position: 50% 50%;
+              color: #ddd;
+            }
+          }
+        }
+      }
+      .util {
+        li {
+          margin-right: 20px;
+          // &:last-child {
+          //   color: $main-color;
+          // }
+          &:nth-last-child(1) {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+  .addressBox {
+    padding: 50px 0;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      .address {
+        line-height: 1.5;
+        .copyright {
+          margin-top: 20px;
+          color: #999;
+        }
+      }
+      .tel {
+        display: flex;
+        .title {
+          font-size: 20px;
+        }
+        .info {
+          margin-left: 20px;
+          strong {
+            font-size: $font-medium + 5;
+            font-weight: 700;
+            color: $main-color;
+            display: block;
+            margin-bottom: 10px;
+          }
+          p {
+            font-size: 14px;
+            line-height: 1.5;
+            span {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
