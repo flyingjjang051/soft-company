@@ -1,0 +1,77 @@
+@import "vars";
+@import "mixin";
+
+.subVisual {
+  background-color: $sub-visual-color;
+  .container {
+    height: 700px;
+    position: relative;
+  }
+  .contentsBox {
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    height: 700px;
+    .subTitleBox {
+      .subTitle {
+        font-size: $font-large;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+      p {
+        color:#333;
+        line-height: 1.8;
+      }
+    }
+    .imgBox {
+      width:740px;
+      height: 500px;
+      position: relative;
+      img {
+        position: absolute;
+      }
+    }
+  }
+}
+#subVisual01 {
+  .contentsBox .imgBox {
+    img {
+      &:nth-child(1) {left:200px;}
+      &:nth-child(2) {left:0; top:120px;}
+      &:nth-child(3) {left:60px; top:250px;}
+      &:nth-child(4) {right:0; top:120px;}
+    }
+  }
+}
+#lnb {
+  position: absolute;
+  background-color: #fff;
+  width:100%;
+  left:0;
+  bottom:0;
+  .depth02 {
+    display: flex;
+    li {
+      flex-basis: 25%;
+      border: 1px solid #ccc;
+      &:not(:nth-child(1)) {
+        border-left: none;
+      }
+      &.active {
+        background-color: $main-color;
+        border-color: $main-color;
+        color:#fff;
+      }
+      a {
+        display: flex;
+        height: 70px;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .depth03 {
+    display: none;
+  }
+}
