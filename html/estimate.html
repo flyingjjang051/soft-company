@@ -29,16 +29,16 @@
 <div class="subContents">
   <div class="breadCrumb">
     <div class="container">
-      <a href="" class="home"></a>
+      <a href="" class="home">home</a>
       <a href="" class="lnb01">클라우드 LMS</a>
       <div class="lnb02">
-        <button>클라우드 LMS</button>
+        <button>견적문의</button>
         <? include("../include/lnb01.html"); ?>
       </div>
     </div>
   </div>
   <div class="contents">
-    <div class="contentsTitleBox">
+    <div class="contentsTitleBox blind">
       <h3 class="contentsTitle">
         고객과 함께 성장하는 것 <br />
         바로 맑은소프트가 추구하는 핵심가치
@@ -47,7 +47,7 @@
     </div>
     <div class="formBox">
       <div class="container">
-        <div class="upper">
+        <div class="upper blind">
           <h4 class="h4">국내 1위 이러닝 플랫폼 맑은소프트 제안서</h4>
           <ul>
             <li>
@@ -59,12 +59,21 @@
           </ul>
         </div>
         <form action="" class="form">
-          <div>
+          <div class="inner">
             <dl>
               <dt>상담유형</dt>
               <dd>
-                <label><input type="radio" name="counsel" id="" che /><span>이메일 상담신청</span></label>
-                <label><input type="radio" name="counsel" id="" /><span>전화 상담신청</span></label>
+                <label class="label radio"><input type="radio" name="counsel" id="" /><span>이메일 상담신청</span></label>
+                <label class="label radio"><input type="radio" name="counsel" id="" /><span>전화 상담신청</span></label>
+              </dd>
+            </dl>
+          </div>
+          <div class="inner">
+            <dl>
+              <dt>상담유형</dt>
+              <dd>
+                <label class="label checkbox"><input type="checkbox" name="counsel" id="" /><span>이메일 상담신청</span></label>
+                <label class="label checkbox"><input type="checkbox" name="counsel" id="" /><span>전화 상담신청</span></label>
               </dd>
             </dl>
           </div>
