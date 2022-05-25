@@ -60,7 +60,7 @@
         </div>
         <form action="" class="form">
           <div class="inner">
-            <dl>
+            <dl class="require">
               <dt>상담유형</dt>
               <dd>
                 <label class="label radio"><input type="radio" name="counsel" id="" /><span>이메일 상담신청</span></label>
@@ -69,11 +69,54 @@
             </dl>
           </div>
           <div class="inner">
-            <dl>
-              <dt>상담유형</dt>
+            <dl class="require w50">
+              <dt>회사명</dt>
               <dd>
-                <label class="label checkbox"><input type="checkbox" name="counsel" id="" /><span>이메일 상담신청</span></label>
-                <label class="label checkbox"><input type="checkbox" name="counsel" id="" /><span>전화 상담신청</span></label>
+                <label class="label text"><input type="text" name="" id="" placeholder="회사명을 입력하세요." /></label>
+              </dd>
+            </dl>
+            <dl class="require w50">
+              <dt>연락처</dt>
+              <dd>
+                <label class="label text"><input type="text" name="" id="" placeholder="이메일을 입력하세요." /></label>
+              </dd>
+            </dl>
+          </div>
+          <div class="inner">
+            <dl class="require w50">
+              <dt>담당자/직책</dt>
+              <dd>
+                <label class="label text">
+                  <input type="text" name="" id="" placeholder="담당자명" class="harf" />
+                  <input type="text" name="" id="" placeholder="직책" class="harf" />
+                </label>
+              </dd>
+            </dl>
+            <dl class="require w50">
+              <dt>이메일</dt>
+              <dd>
+                <label class="label text"><input type="text" name="" id="" placeholder="이메일을 입력하세요." /></label>
+              </dd>
+            </dl>
+          </div>
+          <div class="inner">
+            <dl class="require w50">
+              <dt>문의 유형</dt>
+              <dd>
+                <label class="label">
+                  <select name="" id="" class="harf">
+                    <option value="">카테고리</option>
+                    <option value="" selected>클라우드 LMS</option>
+                    <option value="">환급과정 LMS</option>
+                    <option value="">스마트혼합 LMS</option>
+                  </select>
+                  <select name="" id="" class="harf">
+                    <option value="">카테고리</option>
+                    <option value="">클라우드 LMS</option>
+                    <option value="">환급과정 LMS</option>
+                    <option value="">스마트혼합 LMS</option>
+                  </select>
+                </label>
               </dd>
             </dl>
           </div>
