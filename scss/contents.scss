@@ -87,6 +87,8 @@
   }
 }
 .breadCrumb {
+  position: relative;
+  z-index: 2;
   .container {
     display: flex;
     border-bottom: 1px solid #ccc;
@@ -164,7 +166,25 @@
       align-items: center;
       padding: 10px 0;
       width: 100%;
-      &.require {
+      &.textarea {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        dd {
+          padding: 0 20px;
+        }
+        textarea {
+          width: 100%;
+          border: 1px solid #ccc;
+          padding: 20px;
+          height: 200px;
+          resize: none;
+          line-height: 1.5;
+          font-family: inherit;
+          font-size: 15px;
+        }
+      }
+      &.required {
         dt:after {
           content: "*";
           display: inline-block;
@@ -179,10 +199,13 @@
       dt {
         width: 180px;
         padding: 20px;
+        box-sizing: border-box;
       }
       dd {
         display: flex;
-        width: 100%;
+        flex-grow: 1;
+        //width: calc(100% - 180px);
+        position: relative;
         .label {
           margin-right: 20px;
         }
@@ -190,7 +213,8 @@
     }
   }
   .label {
-    &.text {
+    &.text,
+    &.selectBox {
       width: 100%;
       font-size: 0;
     }
@@ -269,5 +293,11 @@
         }
       }
     }
+  }
+  .abs {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(120%, -50%);
   }
 }

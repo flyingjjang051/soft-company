@@ -34,6 +34,8 @@
 
 #lnb .depth03 { display: none; }
 
+.breadCrumb { position: relative; z-index: 2; }
+
 .breadCrumb .container { display: flex; border-bottom: 1px solid #ccc; padding: 20px 0; }
 
 .breadCrumb .container .home { display: flex; width: 50px; height: 50px; overflow: hidden; text-indent: -999px; justify-content: center; align-items: center; border-left: 1px solid rgba(255, 255, 255, 0.5); }
@@ -56,17 +58,23 @@
 
 .form .inner dl { display: flex; align-items: center; padding: 10px 0; width: 100%; }
 
-.form .inner dl.require dt:after { content: "*"; display: inline-block; color: #0f91d0; margin-left: 10px; }
+.form .inner dl.textarea { flex-direction: column; justify-content: flex-start; align-items: stretch; }
+
+.form .inner dl.textarea dd { padding: 0 20px; }
+
+.form .inner dl.textarea textarea { width: 100%; border: 1px solid #ccc; padding: 20px; height: 200px; resize: none; line-height: 1.5; font-family: inherit; font-size: 15px; }
+
+.form .inner dl.required dt:after { content: "*"; display: inline-block; color: #0f91d0; margin-left: 10px; }
 
 .form .inner dl.w50 { width: 50%; display: inline-flex; }
 
-.form .inner dl dt { width: 180px; padding: 20px; }
+.form .inner dl dt { width: 180px; padding: 20px; box-sizing: border-box; }
 
-.form .inner dl dd { display: flex; width: 100%; }
+.form .inner dl dd { display: flex; flex-grow: 1; position: relative; }
 
 .form .inner dl dd .label { margin-right: 20px; }
 
-.form .label.text { width: 100%; font-size: 0; }
+.form .label.text, .form .label.selectBox { width: 100%; font-size: 0; }
 
 .form .label input[type="radio"], .form .label input[type="checkbox"] { position: absolute; padding: 0; border: 0; width: 0; height: 0; overflow: hidden; }
 
@@ -85,3 +93,5 @@
 .form .label input[type="text"].harf, .form .label select.harf { width: calc(50% - 5px); margin-right: 10px; }
 
 .form .label input[type="text"].harf:last-child, .form .label select.harf:last-child { margin-right: 0; }
+
+.form .abs { position: absolute; right: 0; top: 50%; transform: translate(120%, -50%); }

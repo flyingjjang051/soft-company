@@ -60,7 +60,7 @@
         </div>
         <form action="" class="form">
           <div class="inner">
-            <dl class="require">
+            <dl class="required">
               <dt>상담유형</dt>
               <dd>
                 <label class="label radio"><input type="radio" name="counsel" id="" /><span>이메일 상담신청</span></label>
@@ -69,13 +69,13 @@
             </dl>
           </div>
           <div class="inner">
-            <dl class="require w50">
+            <dl class="required w50">
               <dt>회사명</dt>
               <dd>
                 <label class="label text"><input type="text" name="" id="" placeholder="회사명을 입력하세요." /></label>
               </dd>
             </dl>
-            <dl class="require w50">
+            <dl class="required w50">
               <dt>연락처</dt>
               <dd>
                 <label class="label text"><input type="text" name="" id="" placeholder="이메일을 입력하세요." /></label>
@@ -83,7 +83,7 @@
             </dl>
           </div>
           <div class="inner">
-            <dl class="require w50">
+            <dl class="required w50">
               <dt>담당자/직책</dt>
               <dd>
                 <label class="label text">
@@ -92,7 +92,7 @@
                 </label>
               </dd>
             </dl>
-            <dl class="require w50">
+            <dl class="required w50">
               <dt>이메일</dt>
               <dd>
                 <label class="label text"><input type="text" name="" id="" placeholder="이메일을 입력하세요." /></label>
@@ -100,10 +100,10 @@
             </dl>
           </div>
           <div class="inner">
-            <dl class="require w50">
+            <dl class="required w50">
               <dt>문의 유형</dt>
               <dd>
-                <label class="label">
+                <label class="label selectBox">
                   <select name="" id="" class="harf">
                     <option value="">카테고리</option>
                     <option value="" selected>클라우드 LMS</option>
@@ -117,6 +117,46 @@
                     <option value="">스마트혼합 LMS</option>
                   </select>
                 </label>
+                <label class="label checkbox abs">
+                  <input type="checkbox" name="" id="" />
+                  <span>견적서 신청</span>
+                </label>
+              </dd>
+            </dl>
+          </div>
+          <div class="inner">
+            <dl class="required">
+              <dt>제목</dt>
+              <dd>
+                <label class="label text">
+                  <input type="text" name="" id="" placeholder="20자 이내로 입력해 주세요." />
+                </label>
+              </dd>
+            </dl>
+          </div>
+          <div class="inner">
+            <dl class="required textarea">
+              <dt>문의내용</dt>
+              <dd>
+                <textarea name="" id="" cols="30" rows="10">
+아래 체크리스트를 사전에 준비해 두시면 구축 상담에 도움이 됩니다.
+  1. 이러닝 사용목적 및 현황 (기업, 개인, 학원, 평생교육시설 등)
+  2. 이러닝 사용 예상회원 수
+  3. 홈페이지 오픈 예상일과 예상비용
+  4. 콘텐츠 현황 (자체제작/외부제작), 용량, 갯수, 내용
+  5. 콘텐츠 종류 - 동영상, 웹컨텐츠(HTML5), 문서 컨텐츠(PPT/엑셀/워드/PDF 등)
+  6. 홈페이지 디자인 (기본형/맞춤형)
+  7. 전자결제 사용여부(PG)
+  8. 그 외 필요한 별도기능
+                </textarea>
+              </dd>
+            </dl>
+          </div>
+          <div class="inner">
+            <dl>
+              <dt>첨부파일</dt>
+              <dd>
+                <input type="file" />
               </dd>
             </dl>
           </div>
