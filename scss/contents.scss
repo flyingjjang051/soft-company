@@ -301,3 +301,36 @@
     transform: translate(120%, -50%);
   }
 }
+
+.fileBox {
+  width: 100%;
+  display: flex;
+  margin-right: 20px;
+  label {
+    width: 100px;
+    height: 50px;
+    background-color: $main-color;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-left: 10px;
+  }
+  input[type="file"] {
+    width: 0;
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+  }
+  input[type="text"] {
+    height: 50px;
+    width: calc(100% - 110px);
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

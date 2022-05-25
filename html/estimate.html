@@ -156,7 +156,10 @@
             <dl>
               <dt>첨부파일</dt>
               <dd>
-                <input type="file" />
+                <div class="fileBox">
+                  <input type="text" class="file" placeholder="첨부파일" />
+                  <label><input type="file" /><span>파일찾기</span></label>
+                </div>
               </dd>
             </dl>
           </div>
@@ -165,4 +168,13 @@
     </div>
   </div>
 </div>
+<script>
+  const file = document.querySelector(".fileBox input[type='file']");
+  const fakeFileTxt = document.querySelector(".fileBox .file");
+  file.addEventListener("change", function () {
+    const fileName = file.value;
+    fakeFileTxt.value = fileName;
+    console.log(fileName);
+  });
+</script>
 <? include("../include/footer.html"); ?>
