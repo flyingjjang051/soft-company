@@ -4,13 +4,13 @@
         <li class="swiper-slide visual01">
           <div class="txtBox">
             <div class="inner">
-              <p class="headTxt">국내 1위 이러닝 클라우드 플랫폼</p>
-              <h2>
+              <p class="headTxt" data-splitting>국내 1위 이러닝 클라우드 플랫폼</p>
+              <h2 data-splitting>
                 맑은소프트 LMS로 <br />
                 최상의 교육 서비스를 <br />
                 제공하세요!
               </h2>
-              <p class="descTxt">홈페이지, 콘텐츠 제작은 물론, 학습 관리와 교육 판매까지!</p>
+              <p class="descTxt" data-splitting>홈페이지, 콘텐츠 제작은 물론, 학습 관리와 교육 판매까지!</p>
               <a href="">더보기</a>
             </div>
           </div>
@@ -18,13 +18,13 @@
         <li class="swiper-slide visual02">
           <div class="txtBox">
             <div class="inner">
-              <p class="headTxt">국내 1위 이러닝 클라우드 플랫폼</p>
-              <h2>
+              <p class="headTxt" data-splitting>국내 2위 이러닝 클라우드 플랫폼인지 아닌지</p>
+              <h2 data-splitting>
                 맑은소프트 LMS로 <br />
                 최상의 교육 서비스를 <br />
                 제공하세요!
               </h2>
-              <p class="descTxt">홈페이지, 콘텐츠 제작은 물론, 학습 관리와 교육 판매까지!</p>
+              <p class="descTxt" data-splitting>홈페이지, 콘텐츠 제작은 물론, 학습 관리와 교육 판매까지!</p>
               <a href="">더보기</a>
             </div>
           </div>
@@ -32,13 +32,13 @@
         <li class="swiper-slide visual03">
           <div class="txtBox">
             <div class="inner">
-              <p class="headTxt">국내 1위 이러닝 클라우드 플랫폼</p>
-              <h2>
+              <p class="headTxt" data-splitting>국내 1위 이러닝 클라우드 플랫폼</p>
+              <h2 data-splitting>
                 맑은소프트 LMS로 <br />
                 최상의 교육 서비스를 <br />
                 제공하세요!
               </h2>
-              <p class="descTxt">홈페이지, 콘텐츠 제작은 물론, 학습 관리와 교육 판매까지!</p>
+              <p class="descTxt" data-splitting>홈페이지, 콘텐츠 제작은 물론, 학습 관리와 교육 판매까지!</p>
               <a href="">더보기</a>
             </div>
           </div>
@@ -763,22 +763,50 @@
       </div>
     </section>
     <script>
+      Splitting();
+      
+      const mainVisualItemMotion = function(){
+        const mainVisualTL = gsap.timeline();
+        mainVisualTL
+        .from("#mainVisual .swiper-slide-active .txtBox .inner .headTxt .char",{y:100,opacity:0,ease:"power4.out",duration:1,stagger:0.1})
+        .from("#mainVisual .swiper-slide-active .txtBox .inner h2 .char",{y:100,opacity:0,ease:"power4.out",duration:1,stagger:0.1})
+        .from("#mainVisual .swiper-slide-active .txtBox .inner .descTxt .char",{y:100,opacity:0,ease:"power4.out",duration:1,stagger:0.1})
+        .from("#mainVisual .swiper-slide-active .txtBox .inner a",{y:100,opacity:0,ease:"power4.out",duration:1});  
+      }
+      
       new Swiper("#mainVisual", {
       effect: "fade", // slide,fade,cube,coverflow,card
       speed: 1000,
-      loop: true,
+      //loop: true,
       navigation: {
         nextEl: "#mainVisual .next",
         prevEl: "#mainVisual .prev",
       },
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 3000,
+      //   disableOnInteraction: false,
+      // },
       pagination: {
         el: "#mainVisual .pagination",
         type: "bullets",
         clickable: true,
+      },
+      on: {
+        init: function () {
+          //console.log('swiper initialized');
+          mainVisualItemMotion();
+        },
+        // slideChange:function() {
+        //   console.log('slideChange');
+        //   alert("swiper slideChange");
+        // },
+        slideChangeTransitionStart:function() {
+        },
+        slideChangeTransitionEnd:function() {
+          // console.log('slideChangeTransitionStart');
+          // alert("swiper slideChangeTransitionStart");
+          mainVisualItemMotion();
+        }
       },
     });
 
@@ -819,5 +847,10 @@
         prevEl: "#elearning .prev",
       },
     });
+    
+    
+    
+    
+    
     </script>
     <? include("../include/footer.html"); ?>
