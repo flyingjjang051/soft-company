@@ -765,13 +765,23 @@
     <script>
       Splitting();
       
-      const mainVisualItemMotion = function(){
-        const mainVisualTL = gsap.timeline();
+      // 하나 생성해서 계속 쓰기....
+      const mainVisualTL = gsap.timeline();
+      const mainVisualItemStartMotion = function(){
+        mainVisualTL.clear();
+        mainVisualTL.set("#mainVisual .swiper-slide-active .txtBox .inner .headTxt .char",{y:100,opacity:0})
+        .set("#mainVisual .swiper-slide-active .txtBox .inner h2 .char",{y:100,opacity:0})
+        .set("#mainVisual .swiper-slide-active .txtBox .inner .descTxt .char",{y:100,opacity:0})
+        .set("#mainVisual .swiper-slide-active .txtBox .inner a",{opacity:0});  
+        console.log("aaa");
+      }
+      const mainVisualItemEndMotion = function(){
+        mainVisualTL.clear();
         mainVisualTL
-        .from("#mainVisual .swiper-slide-active .txtBox .inner .headTxt .char",{y:100,opacity:0,ease:"power4.out",duration:1,stagger:0.1})
-        .from("#mainVisual .swiper-slide-active .txtBox .inner h2 .char",{y:100,opacity:0,ease:"power4.out",duration:1,stagger:0.1})
-        .from("#mainVisual .swiper-slide-active .txtBox .inner .descTxt .char",{y:100,opacity:0,ease:"power4.out",duration:1,stagger:0.1})
-        .from("#mainVisual .swiper-slide-active .txtBox .inner a",{y:100,opacity:0,ease:"power4.out",duration:1});  
+        .fromTo("#mainVisual .swiper-slide-active .txtBox .inner .headTxt .char",{y:100,opacity:0},{y:0,opacity:1,ease:"power4.out",duration:1,stagger:0.05})
+        .fromTo("#mainVisual .swiper-slide-active .txtBox .inner h2 .char",{y:100,opacity:0},{y:0,opacity:1,ease:"power4.out",duration:1,stagger:0.02})
+        .fromTo("#mainVisual .swiper-slide-active .txtBox .inner .descTxt .char",{y:100,opacity:0},{y:0,opacity:1,ease:"power4.out",duration:1,stagger:0.02})
+        .fromTo("#mainVisual .swiper-slide-active .txtBox .inner a",{opacity:0},{opacity:1,ease:"power4.out",duration:1});  
       }
       
       new Swiper("#mainVisual", {
@@ -794,18 +804,19 @@
       on: {
         init: function () {
           //console.log('swiper initialized');
-          mainVisualItemMotion();
+          mainVisualItemEndMotion();
         },
         // slideChange:function() {
         //   console.log('slideChange');
         //   alert("swiper slideChange");
         // },
         slideChangeTransitionStart:function() {
+          mainVisualItemStartMotion();
         },
         slideChangeTransitionEnd:function() {
           // console.log('slideChangeTransitionStart');
           // alert("swiper slideChangeTransitionStart");
-          mainVisualItemMotion();
+          mainVisualItemEndMotion();
         }
       },
     });
