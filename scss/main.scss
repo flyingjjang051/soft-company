@@ -100,10 +100,8 @@
   li {
     height: calc(100vh - 100px);
     position: relative;
-    background: {
-      size: cover;
-      repeat: none;
-      position: 50% 50%;
+    &.swiper-slide-active .img {
+      transform: scale(1);
     }
     &:before {
       @include pseudo;
@@ -113,9 +111,23 @@
       bottom: 0;
       background-color: rgba(0, 0, 0, 0.5);
     }
+    .img {
+      background: {
+        size: cover;
+        repeat: none;
+        position: 50% 50%;
+      }
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: scale(1.2);
+      transition: all 5s ease 1s;
+    }
     //보간(interpolation) 주의
     @for $i from 1 to 4 {
-      &.visual0#{$i} {
+      &.visual0#{$i} .img {
         background-image: url("../images/main/visual0#{$i}.jpg");
       }
     }
@@ -136,7 +148,7 @@
       justify-content: flex-end;
       align-items: center;
       color: #fff;
-      z-index: 1;
+      z-index: 2;
       position: relative;
       .headTxt {
         font-size: $font-medium;
