@@ -773,7 +773,6 @@
       
       
       const mainVisualItemStartMotion = function(){
-        mainVisualTL.kill();
         mainVisualTL.set("#mainVisual .swiper-slide .txtBox .inner .headTxt .char",{y:100,opacity:0})
         .set("#mainVisual .swiper-slide .txtBox .inner h2 .char",{y:100,opacity:0})
         .set("#mainVisual .swiper-slide .txtBox .inner .descTxt .char",{y:100,opacity:0})
@@ -789,9 +788,9 @@
       }
       
       new Swiper("#mainVisual", {
-      effect: "fade", // slide,fade,cube,coverflow,card
+      effect: "fade",
       speed: 1000,
-      //loop: true,
+      loop: true,
       navigation: {
         nextEl: "#mainVisual .next",
         prevEl: "#mainVisual .prev",
